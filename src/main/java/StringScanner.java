@@ -1,0 +1,6 @@
+/**
+ * StringScanner
+ */
+
+public class StringScanner {
+}
