@@ -6,6 +6,6 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         phraseAsked = sc.nextLine();
         StringScanner stringScanner = new StringScanner();
-
     }
+
 }
