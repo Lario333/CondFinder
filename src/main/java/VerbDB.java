@@ -6,12 +6,17 @@ public class VerbDB {
     public VerbDB(){}
 
 
+    // Adding a Verb to the DB
+    public void addVerb(Verb v){
+        verbDB.add(v);
+    }
+
     // Database
-    public static ArrayList<Verb> getVerbDB() {
+    public ArrayList<Verb> getVerbDB() {
         return verbDB;
     }
 
-    public static void setVerbDB(ArrayList<Verb> verbDB) {
+    public void setVerbDB(ArrayList<Verb> verbDB) {
         VerbDB.verbDB = verbDB;
     }
 }

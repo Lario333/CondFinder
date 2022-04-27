@@ -4,12 +4,12 @@ public class Verb {
         Class Constructor
         every verbs in csv is a param
      */
-    public Verb(String baseForm , String thPerson , String prsntParticiple , String smplPast , String pstParticiple ){
-        this.baseForm = baseForm;
-        this.thPerson = thPerson;
-        this.prsntParticiple = prsntParticiple;
-        this.smplPast = smplPast;
-        this.pstParticiple = pstParticiple;
+    public Verb(String[] verbArray){
+        this.baseForm = verbArray[0];
+        this.thPerson = verbArray[1];
+        this.prsntParticiple = verbArray[2];
+        this.smplPast = verbArray[3];
+        this.pstParticiple = verbArray[4];
     }
     // Base Form
     public String getBaseForm() {
