@@ -11,6 +11,16 @@ public class VerbDB {
         verbDB.add(v);
     }
 
+    // GetVerbFromBaseForm
+    public Verb getVerbFromBF(String bf){
+        for(int i = 0 ; i < verbDB.size() ; i++){
+            if (verbDB.get(i).getBaseForm().equalsIgnoreCase(bf)){
+                return verbDB.get(i);
+            }
+        }
+        return null;
+    }
+
     // Database
     public ArrayList<Verb> getVerbDB() {
         return verbDB;
