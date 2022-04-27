@@ -50,7 +50,6 @@ public class Main {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
     }
     public static void main(String[] args){
         setVerbDatabase();
@@ -58,6 +57,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         phraseAsked = sc.nextLine();
         StringScanner stringScanner = new StringScanner();
+        stringScanner.scanString(phraseAsked);
     }
 
 }

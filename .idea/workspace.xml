@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="523607da-f177-481e-8ef9-11d5337f738d" name="Changes" comment="Changes">
+    <list default="true" id="523607da-f177-481e-8ef9-11d5337f738d" name="Changes" comment="Solved a problem with verbDB">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/StringScanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/StringScanner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Verb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Verb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/VerbDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/VerbDB.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,7 +145,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651080524620</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Solved a problem with verbDB">
+      <created>1651094835784</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1651094835784</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -187,6 +197,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="First Commit" />
     <MESSAGE value="Changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes" />
+    <MESSAGE value="Solved a problem with verbDB" />
+    <option name="LAST_COMMIT_MESSAGE" value="Solved a problem with verbDB" />
   </component>
 </project>

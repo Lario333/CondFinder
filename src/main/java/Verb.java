@@ -11,6 +11,34 @@ public class Verb {
         this.smplPast = verbArray[3];
         this.pstParticiple = verbArray[4];
     }
+
+    // Return if contains the verb, not caring of the tense
+    public boolean containsVerb(String v){
+        if (baseForm.equalsIgnoreCase(v) || thPerson.equalsIgnoreCase(v) || prsntParticiple.equalsIgnoreCase(v) || smplPast.equalsIgnoreCase(v) || pstParticiple.equalsIgnoreCase(v)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    // Returning the tense of the verb given
+    public String getVerbalTense(String v){
+        if (baseForm.equalsIgnoreCase(v) || thPerson.equalsIgnoreCase(v) || prsntParticiple.equalsIgnoreCase(v) || smplPast.equalsIgnoreCase(v) || pstParticiple.equalsIgnoreCase(v)) {
+            if (baseForm.equalsIgnoreCase(v)){
+                return "baseForm";
+            } else if (thPerson.equalsIgnoreCase(v)){
+                return "thPerson";
+            } else if (prsntParticiple.equalsIgnoreCase(v)){
+                return "prsntParticiple";
+            } else if (smplPast.equalsIgnoreCase(v)){
+                return "smplPast";
+            } else if (pstParticiple.equalsIgnoreCase(v)){
+                return "pstParticiple";
+            }
+        }
+        return "Not here";
+    }
+
     // Base Form
     public String getBaseForm() {
         return baseForm;
