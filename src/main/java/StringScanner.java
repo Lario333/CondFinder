@@ -4,19 +4,21 @@
 
 public class StringScanner {
 
-    String[] words; // contain all words of the phrase
+    private String[] words; // contain all words of the phrase
 
+    // default constructor
     public StringScanner() {
         words = null;
     }
 
     // split the phrase in words
-    private String[] phraseSplit() {
-        String[] tempWords = null;
+    public String[] phraseSplit(String phrase) {
 
         // TODO
 
-        return tempWords;
+        words = phrase.split(",* ");
+
+        return words;
     }
 
     // identify the type of conditional
