@@ -2,7 +2,6 @@ import java.io.*;
 import java.util.Scanner;
 
 
-// TODO setVerbDatabase() only finds verbs with 1 verbal temp
 public class Main {
     public static VerbDB verbDB = new VerbDB();
     /*
@@ -37,10 +36,13 @@ public class Main {
                             newTempArray[i] = newTempArray[i - 1];
                         }
                     }
+                } else {
+                    for(int i = 0 ; i < 5 ; i++){
+                        newTempArray[i] = tempArray[i];
+                    }
                 }
                 // creating and adding the verb into the arraylist in VerbDB
                 Verb v = new Verb(newTempArray);
-                System.out.println(v.baseForm);
                 verbDB.addVerb(v);
             }
         } catch (FileNotFoundException e) {
