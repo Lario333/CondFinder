@@ -11,15 +11,6 @@ public class VerbDB {
         verbDB.add(v);
     }
 
-    public String getAss(String v){
-        for(int i = 0 ; i < verbDB.size() ; i ++ ){
-            if (verbDB.get(i).getBaseForm().equalsIgnoreCase(v)){
-                return verbDB.get(i).getNegPstPerfect();
-            }
-        }
-        return null;
-    }
-
     /*
         IsVerbContained
         @return a boolean, if the word given is a verb contained in the db

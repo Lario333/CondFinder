@@ -61,11 +61,6 @@ public class Verb {
         return thPerson;
     }
 
-
-    public String getNegPstPerfect(){
-        return negPstPerfect;
-    }
-
     // Present Participle
     public String getPrsntParticiple() {
         return prsntParticiple;
