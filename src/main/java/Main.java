@@ -85,7 +85,8 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
         phraseAsked = sc.nextLine(); // Getting the phrase
-        stringScanner.scanString(phraseAsked); // Scannning the string
+        String condForm = stringScanner.scanString(phraseAsked); // Scannning the string
+        System.out.println(condForm + " conditional");
     }
 
 }
