@@ -11,6 +11,15 @@ public class VerbDB {
         verbDB.add(v);
     }
 
+    public String getAss(String v){
+        for(int i = 0 ; i < verbDB.size() ; i ++ ){
+            if (verbDB.get(i).getBaseForm().equalsIgnoreCase(v)){
+                return verbDB.get(i).getNegPstPerfect();
+            }
+        }
+        return null;
+    }
+
     /*
         IsVerbContained
         @return a boolean, if the word given is a verb contained in the db
@@ -18,7 +27,7 @@ public class VerbDB {
     public boolean isVerbContained(String w){
         boolean isThere = false;
         for(int i = 0 ; i < verbDB.size() ; i ++){
-            if ( (verbDB.get(i).getBaseForm().equalsIgnoreCase(w)) || (verbDB.get(i).getPrsntParticiple().equalsIgnoreCase(w)) || (verbDB.get(i).getPstParticiple().equalsIgnoreCase(w)) || (verbDB.get(i).getSmplPast().equalsIgnoreCase(w)) || (verbDB.get(i).getThPerson().equalsIgnoreCase(w)) || (verbDB.get(i).getPrsntParticiple().equalsIgnoreCase(w))) {
+            if ( (verbDB.get(i).getBaseForm().equalsIgnoreCase(w)) || (verbDB.get(i).getPrsntParticiple().equalsIgnoreCase(w)) || (verbDB.get(i).getPstParticiple().equalsIgnoreCase(w)) || (verbDB.get(i).getSmplPast().equalsIgnoreCase(w)) || (verbDB.get(i).getThPerson().equalsIgnoreCase(w))) {
                 isThere = true;
             }
         }
@@ -35,10 +44,5 @@ public class VerbDB {
             }
         }
         return null;
-    }
-
-    // Getting the whole db
-    public ArrayList<Verb> getVerbDB() {
-        return verbDB;
     }
 }

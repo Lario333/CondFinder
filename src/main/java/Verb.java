@@ -1,6 +1,6 @@
 public class Verb {
     String baseForm , thPerson, prsntParticiple, smplPast, pstParticiple;
-    String pstPerfect , shortPstPerfect;
+    String pstPerfect , shortPstPerfect , negPstPerfect;
     /*
         Class Constructor
         every verbs in csv is a param
@@ -12,12 +12,13 @@ public class Verb {
         this.smplPast = verbArray[3];
         this.pstParticiple = verbArray[4];
         this.pstPerfect = "had " + verbArray[4];
+        this.negPstPerfect = "hadn't " + verbArray[4];
         this.shortPstPerfect = "'d " + verbArray[4];
     }
 
     // Return if contains the verb, not caring of the tense
     public boolean containsVerb(String v){
-        if (baseForm.equalsIgnoreCase(v) || thPerson.equalsIgnoreCase(v) || prsntParticiple.equalsIgnoreCase(v) || smplPast.equalsIgnoreCase(v) || pstParticiple.equalsIgnoreCase(v) || pstPerfect.equalsIgnoreCase(v) || shortPstPerfect.equalsIgnoreCase(v)) {
+        if (baseForm.equalsIgnoreCase(v) || thPerson.equalsIgnoreCase(v) || prsntParticiple.equalsIgnoreCase(v) || smplPast.equalsIgnoreCase(v) || pstParticiple.equalsIgnoreCase(v) || pstPerfect.equalsIgnoreCase(v) || shortPstPerfect.equalsIgnoreCase(v) || negPstPerfect.equalsIgnoreCase(v)) {
             return true;
         } else {
             return false;
@@ -26,7 +27,11 @@ public class Verb {
 
     // Returning the tense of the verb given
     public String getVerbalTense(String v){
-        if (baseForm.equalsIgnoreCase(v) || thPerson.equalsIgnoreCase(v) || prsntParticiple.equalsIgnoreCase(v) || smplPast.equalsIgnoreCase(v) || pstParticiple.equalsIgnoreCase(v) || pstPerfect.equalsIgnoreCase(v) || shortPstPerfect.equalsIgnoreCase(v)) {
+        if (baseForm.equalsIgnoreCase(v) || thPerson.equalsIgnoreCase(v) || prsntParticiple.equalsIgnoreCase(v) || smplPast.equalsIgnoreCase(v) || pstParticiple.equalsIgnoreCase(v) || pstPerfect.equalsIgnoreCase(v) || shortPstPerfect.equalsIgnoreCase(v) || negPstPerfect.equalsIgnoreCase(v)) {
+            //System.out.println(v);
+            if (pstParticiple.equalsIgnoreCase(v) && smplPast.equalsIgnoreCase(v)){
+                return "irregular";
+            }
             if (baseForm.equalsIgnoreCase(v)){
                 return "baseForm";
             } else if (thPerson.equalsIgnoreCase(v)){
@@ -37,7 +42,7 @@ public class Verb {
                 return "smplPast";
             } else if (pstParticiple.equalsIgnoreCase(v)){
                 return "pstParticiple";
-            } else if (pstPerfect.equalsIgnoreCase(v) || shortPstPerfect.equalsIgnoreCase(v)){
+            } else if (negPstPerfect.equalsIgnoreCase(v) || pstPerfect.equalsIgnoreCase(v) || shortPstPerfect.equalsIgnoreCase(v)){
                 return "pstPerfect";
             }
         }
@@ -49,9 +54,6 @@ public class Verb {
         return baseForm;
     }
 
-    public void setBaseForm(String baseForm) {
-        this.baseForm = baseForm;
-    }
 
 
     // Third Person
@@ -59,19 +61,16 @@ public class Verb {
         return thPerson;
     }
 
-    public void setThPerson(String thPerson) {
-        this.thPerson = thPerson;
-    }
 
+    public String getNegPstPerfect(){
+        return negPstPerfect;
+    }
 
     // Present Participle
     public String getPrsntParticiple() {
         return prsntParticiple;
     }
 
-    public void setPrsntParticiple(String prsntParticiple) {
-        this.prsntParticiple = prsntParticiple;
-    }
 
 
     // Simple Past
@@ -79,17 +78,9 @@ public class Verb {
         return smplPast;
     }
 
-    public void setSmplPast(String smplPast) {
-        this.smplPast = smplPast;
-    }
-
 
     // Past Participle
     public String getPstParticiple() {
         return pstParticiple;
-    }
-
-    public void setPstParticiple(String pstParticiple) {
-        this.pstParticiple = pstParticiple;
     }
 }

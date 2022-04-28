@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="523607da-f177-481e-8ef9-11d5337f738d" name="Changes" comment="Developed StringScanner">
+    <list default="true" id="523607da-f177-481e-8ef9-11d5337f738d" name="Changes" comment="Next Fix -&gt; comma">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/StringScanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/StringScanner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/verbs.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/verbs.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Verb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Verb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/VerbDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/VerbDB.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,7 +193,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651150807208</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Next Fix -&gt; comma">
+      <created>1651153345426</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1651153345426</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -241,6 +249,7 @@
     <MESSAGE value="Developed the method that finds verbs in the phrase given and also gives his verbal tense" />
     <MESSAGE value="Developed more the StringScanner and created Conditional class, now theres an ArrayList in Main class with every conditional (zero, first, second, third and mixed), the class has methods which with given tenses returns if they form the chosen conditional.&#10;Added the past perfect tense" />
     <MESSAGE value="Developed StringScanner" />
-    <option name="LAST_COMMIT_MESSAGE" value="Developed StringScanner" />
+    <MESSAGE value="Next Fix -&gt; comma" />
+    <option name="LAST_COMMIT_MESSAGE" value="Next Fix -&gt; comma" />
   </component>
 </project>
