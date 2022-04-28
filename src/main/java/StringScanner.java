@@ -1,3 +1,7 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * StringScanner
  */
@@ -5,6 +9,7 @@
 public class StringScanner {
 
     private String[] phrase; // contain all words of the phrase
+    private boolean ifStart;
     // default constructor
     public StringScanner() {
         phrase = null;
@@ -15,21 +20,51 @@ public class StringScanner {
         return phrase.split(",* ");
     }
 
-    // identify the type of conditional
-    public void scanString(String phraseGiven) {
-        this.phrase = phraseSplit(phraseGiven);
-        // TODO Trovare verbo base e a esclusione verificare ogni conditional
-        // For every word, checks if it's a verb contained in VerbDB
-        for(int i = 0 ; i < phrase.length ; i++){
-            // Enters in the statement if the word is a verb
-            if (Main.verbDB.isVerbContained(phrase[i])){
-                // Getting the verbal tense
-                System.out.println(Main.verbDB.getVerbalTense(phrase[i]));
-            }
+    private boolean doesPhraseStartsWithIf(String[] p){
+        if (p[0].equalsIgnoreCase("if")){
+            return true;
+        } else {
+            return false;
         }
     }
 
-    // TODO **Idea Scan** Controllare l’index della parola ”if”, se e’ 0 si fa in un modo, se e’ altro in un altro modo.
+    // identify the type of conditional and searches for the conditional tense used
+    public void scanString(String phraseGiven) {
+        this.phrase = phraseSplit(phraseGiven);
+        this.ifStart = doesPhraseStartsWithIf(phrase); // getting if the phrase starts with if
+        String[] phraseVerbs = new String[4];
+
+        if (ifStart){
+            for(int i = 0 ; i < phrase.length ; i++){
+                // Enters the statement if the tense is past perfect
+                if (phrase[i].equalsIgnoreCase("had")){
+                    // Enters in the statement if the word is a verb
+                    if (Main.verbDB.isVerbContained(phrase[i + 1])){
+                        // Getting the verbal tense and putting it into the phraseVerbs array
+                        phraseVerbs[i] = Main.verbDB.getVerbalTense(phrase[i] + " " + phrase[i + 1]);
+
+
+                        // System.out.println(Main.verbDB.getVerbalTense(phrase[i] + " " + phrase[i + 1]));
+                    }
+                // Enters if the world is not had
+                } else {
+                    if (Main.verbDB.isVerbContained(phrase[i])){
+                        // Getting the verbal tense and putting it into the phraseVerbs array
+                        phraseVerbs[i] = Main.verbDB.getVerbalTense(phrase[i]);
+
+                        // System.out.println(Main.verbDB.getVerbalTense(phrase[i]));
+                    }
+                }
+            }
+
+            for(int i = 0 ; i < phraseVerbs.length; i++){
+
+            }
+        } else {
+
+        }
+
+    }
 
     // get and set
 

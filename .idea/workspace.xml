@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="523607da-f177-481e-8ef9-11d5337f738d" name="Changes" comment="Solved a problem with verbDB">
+    <list default="true" id="523607da-f177-481e-8ef9-11d5337f738d" name="Changes" comment="Developed the method that finds verbs in the phrase given and also gives his verbal tense">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Conditional.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/StringScanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/StringScanner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Verb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Verb.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/VerbDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/VerbDB.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,7 +152,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651094835784</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Developed the method that finds verbs in the phrase given and also gives his verbal tense">
+      <created>1651096087910</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1651096087910</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -198,6 +205,7 @@
     <MESSAGE value="First Commit" />
     <MESSAGE value="Changes" />
     <MESSAGE value="Solved a problem with verbDB" />
-    <option name="LAST_COMMIT_MESSAGE" value="Solved a problem with verbDB" />
+    <MESSAGE value="Developed the method that finds verbs in the phrase given and also gives his verbal tense" />
+    <option name="LAST_COMMIT_MESSAGE" value="Developed the method that finds verbs in the phrase given and also gives his verbal tense" />
   </component>
 </project>
