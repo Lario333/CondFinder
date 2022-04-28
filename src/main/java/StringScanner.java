@@ -33,37 +33,69 @@ public class StringScanner {
         this.phrase = phraseSplit(phraseGiven);
         this.ifStart = doesPhraseStartsWithIf(phrase); // getting if the phrase starts with if
         String[] phraseVerbs = new String[4];
+        int verbCounter = 0;
+        boolean skipVerb = false; // set to skip the next verb if the last was past perfect
 
+        // enters if the phrase starts with "if"
         if (ifStart){
+            // Runs every word
             for(int i = 0 ; i < phrase.length ; i++){
-                // Enters the statement if the tense is past perfect
-                if (phrase[i].equalsIgnoreCase("had")){
-                    // Enters in the statement if the word is a verb
-                    if (Main.verbDB.isVerbContained(phrase[i + 1])){
-                        // Getting the verbal tense and putting it into the phraseVerbs array
-                        phraseVerbs[i] = Main.verbDB.getVerbalTense(phrase[i] + " " + phrase[i + 1]);
-
-
-                        // System.out.println(Main.verbDB.getVerbalTense(phrase[i] + " " + phrase[i + 1]));
+                // runs if the last verb wasn't a composed tense
+                if (!skipVerb){
+                    // Enters the statement if the tense is past perfect
+                    if (phrase[i].equalsIgnoreCase("had")){
+                        // Enters in the statement if the word is a verb
+                        if (Main.verbDB.isVerbContained(phrase[i + 1])){
+                            // Getting the verbal tense and putting it into the phraseVerbs array
+                            phraseVerbs[verbCounter] = Main.verbDB.getVerbalTense(phrase[i] + " " + phrase[i + 1]);
+                            verbCounter++;
+                            skipVerb = true;
+                        }
+                        // Enters if the world is every tense nor past perfect
+                    } else {
+                        if (Main.verbDB.isVerbContained(phrase[i])){
+                            // Getting the verbal tense and putting it into the phraseVerbs array
+                            phraseVerbs[verbCounter] = Main.verbDB.getVerbalTense(phrase[i]);
+                            verbCounter++;
+                        }
                     }
-                // Enters if the world is not had
                 } else {
-                    if (Main.verbDB.isVerbContained(phrase[i])){
-                        // Getting the verbal tense and putting it into the phraseVerbs array
-                        phraseVerbs[i] = Main.verbDB.getVerbalTense(phrase[i]);
-
-                        // System.out.println(Main.verbDB.getVerbalTense(phrase[i]));
-                    }
+                    skipVerb = false;
                 }
             }
-
-            for(int i = 0 ; i < phraseVerbs.length; i++){
-
-            }
         } else {
-
+            // Runs every word
+            for(int i = 0 ; i < phrase.length ; i++){
+                // runs if the last verb wasn't a composed tense
+                if (!skipVerb){
+                    // Enters the statement if the tense is past perfect
+                    if (phrase[i].equalsIgnoreCase("had")){
+                        // Enters in the statement if the word is a verb
+                        if (Main.verbDB.isVerbContained(phrase[i + 1])){
+                            // Getting the verbal tense and putting it into the phraseVerbs array
+                            phraseVerbs[verbCounter] = Main.verbDB.getVerbalTense(phrase[i] + " " + phrase[i + 1]);
+                            verbCounter++;
+                            skipVerb = true;
+                        }
+                        // Enters if the world is every tense nor past perfect
+                    } else {
+                        if (Main.verbDB.isVerbContained(phrase[i])){
+                            // Getting the verbal tense and putting it into the phraseVerbs array
+                            phraseVerbs[verbCounter] = Main.verbDB.getVerbalTense(phrase[i]);
+                            verbCounter++;
+                        }
+                    }
+                } else {
+                    skipVerb = false;
+                }
+            }
         }
 
+
+        // Print verbal tenses
+        for(int i = 0 ; i < phraseVerbs.length; i++){
+            System.out.println(phraseVerbs[i]);
+        }
     }
 
     // get and set

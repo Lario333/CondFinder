@@ -1,6 +1,6 @@
 public class Verb {
     String baseForm , thPerson, prsntParticiple, smplPast, pstParticiple;
-    String pstPerfect;
+    String pstPerfect , shortPstPerfect;
     /*
         Class Constructor
         every verbs in csv is a param
@@ -12,11 +12,12 @@ public class Verb {
         this.smplPast = verbArray[3];
         this.pstParticiple = verbArray[4];
         this.pstPerfect = "had " + verbArray[4];
+        this.shortPstPerfect = "'d " + verbArray[4];
     }
 
     // Return if contains the verb, not caring of the tense
     public boolean containsVerb(String v){
-        if (baseForm.equalsIgnoreCase(v) || thPerson.equalsIgnoreCase(v) || prsntParticiple.equalsIgnoreCase(v) || smplPast.equalsIgnoreCase(v) || pstParticiple.equalsIgnoreCase(v) || pstPerfect.equalsIgnoreCase(v)) {
+        if (baseForm.equalsIgnoreCase(v) || thPerson.equalsIgnoreCase(v) || prsntParticiple.equalsIgnoreCase(v) || smplPast.equalsIgnoreCase(v) || pstParticiple.equalsIgnoreCase(v) || pstPerfect.equalsIgnoreCase(v) || shortPstPerfect.equalsIgnoreCase(v)) {
             return true;
         } else {
             return false;
@@ -25,7 +26,7 @@ public class Verb {
 
     // Returning the tense of the verb given
     public String getVerbalTense(String v){
-        if (baseForm.equalsIgnoreCase(v) || thPerson.equalsIgnoreCase(v) || prsntParticiple.equalsIgnoreCase(v) || smplPast.equalsIgnoreCase(v) || pstParticiple.equalsIgnoreCase(v) || pstPerfect.equalsIgnoreCase(v)) {
+        if (baseForm.equalsIgnoreCase(v) || thPerson.equalsIgnoreCase(v) || prsntParticiple.equalsIgnoreCase(v) || smplPast.equalsIgnoreCase(v) || pstParticiple.equalsIgnoreCase(v) || pstPerfect.equalsIgnoreCase(v) || shortPstPerfect.equalsIgnoreCase(v)) {
             if (baseForm.equalsIgnoreCase(v)){
                 return "baseForm";
             } else if (thPerson.equalsIgnoreCase(v)){
@@ -36,11 +37,11 @@ public class Verb {
                 return "smplPast";
             } else if (pstParticiple.equalsIgnoreCase(v)){
                 return "pstParticiple";
-            } else if (pstPerfect.equalsIgnoreCase(v)){
+            } else if (pstPerfect.equalsIgnoreCase(v) || shortPstPerfect.equalsIgnoreCase(v)){
                 return "pstPerfect";
             }
         }
-        return "Not here";
+        return "null tense";
     }
 
     // Base Form
