@@ -52,7 +52,31 @@ public class StringScanner {
                             verbCounter++;
                             skipVerb = true;
                         }
-                        // Enters if the world is every tense nor past perfect
+                        // Enters if there's a "will" , "can" , "must" or [ imperative form < to-do ]
+                    } else if (phrase[i].equalsIgnoreCase("will") || phrase[i].equalsIgnoreCase("can") || phrase[i].equalsIgnoreCase("must")){
+                        // if the word after is a verb in base form
+                        if (Main.verbDB.isVerbContained(phrase[i + 1])){
+                            phraseVerbs[verbCounter] = "w/c/m-baseForm"; // Prob 1st conditional
+                            verbCounter++;
+                            skipVerb = true;
+                        }
+                        // Enters if there's a "could" or "would"
+                    } else if (phrase[i].equalsIgnoreCase("could") || phrase[i].equalsIgnoreCase("would")) {
+                        // Checks if there's a verb after could/would
+                        if (Main.verbDB.isVerbContained(phrase[i + 1])){
+                            if (phrase[i + 1].equalsIgnoreCase("have") && Main.verbDB.getVerbalTense(phrase[i+2]).equals("pstParticiple")){
+                                // could/would + have + past participle
+                                phraseVerbs[verbCounter] = "c/w-h-pstParticiple"; // Prob 3rd conditional
+                                verbCounter++;
+                                skipVerb = true;
+                            } else {
+                                // could/would + verb
+                                phraseVerbs[verbCounter] = "c/w-baseForm"; // 2nd or Mixed conditional
+                                verbCounter++;
+                                skipVerb = true;
+                            }
+                        }
+                        // Enters if the world is every tense nor past perfect or will/can/must/could/would
                     } else {
                         if (Main.verbDB.isVerbContained(phrase[i])){
                             // Getting the verbal tense and putting it into the phraseVerbs array
@@ -78,20 +102,28 @@ public class StringScanner {
                             verbCounter++;
                             skipVerb = true;
                         }
-                        // Enters if there's a "will" , "can" , "must" or imperative form < to-do
+                        // Enters if there's a "will" , "can" , "must" or [ imperative form < to-do ]
                     } else if (phrase[i].equalsIgnoreCase("will") || phrase[i].equalsIgnoreCase("can") || phrase[i].equalsIgnoreCase("must")){
-                        // [Prob first conditional]
-
+                        // if the word after is a verb in base form
+                        if (Main.verbDB.isVerbContained(phrase[i + 1])){
+                            phraseVerbs[verbCounter] = "w/c/m-baseForm"; // Prob 1st conditional
+                            verbCounter++;
+                            skipVerb = true;
+                        }
                         // Enters if there's a "could" or "would"
                     } else if (phrase[i].equalsIgnoreCase("could") || phrase[i].equalsIgnoreCase("would")) {
                         // Checks if there's a verb after could/would
                         if (Main.verbDB.isVerbContained(phrase[i + 1])){
                             if (phrase[i + 1].equalsIgnoreCase("have") && Main.verbDB.getVerbalTense(phrase[i+2]).equals("pstParticiple")){
                                 // could/would + have + past participle
-                                // have to check the other verb [Prob third conditional]
+                                phraseVerbs[verbCounter] = "c/w-h-pstParticiple"; // Prob 3rd conditional
+                                verbCounter++;
+                                skipVerb = true;
                             } else {
                                 // could/would + verb
-                                // have to check the other verb [Prob mixed conditional]
+                                phraseVerbs[verbCounter] = "c/w-baseForm"; // 2nd or Mixed conditional
+                                verbCounter++;
+                                skipVerb = true;
                             }
                         }
                         // Enters if the world is every tense nor past perfect or will/can/must/could/would
@@ -107,7 +139,6 @@ public class StringScanner {
                 }
             }
         }
-
 
         // Print verbal tenses
         for(int i = 0 ; i < phraseVerbs.length; i++){
